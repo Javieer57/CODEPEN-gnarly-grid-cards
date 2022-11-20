@@ -23,7 +23,8 @@ body {
 	letter-spacing: 0.5px;
 }
 
-img {
+img,
+svg {
 	width: 100%;
 	vertical-align: top;
 }
@@ -84,7 +85,13 @@ a {
 		position: absolute;
 		bottom: -20px;
 		left: 50%;
+		width: 40px;
 		transform: translateX(-50%);
+
+		svg {
+			vertical-align: top;
+			fill: white;
+		}
 
 		&:hover,
 		&:focus-visible,
