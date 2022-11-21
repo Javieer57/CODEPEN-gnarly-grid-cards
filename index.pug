@@ -1,8 +1,12 @@
 doctype html
-html
+html(lang="en")
   head    
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href!="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap")    
     link(rel="stylesheet", href="styles.css")
+    title Gnarly grid cards
   body
 
     - function makeText() { 
@@ -13,16 +17,13 @@ html
     - return text.join(' ') + '.';
     - }
 
-    - for (let i = 1; i <= 4; i++)
-      .card
-        .card__thumb
-          a(href="javascript:;")
+    ol.cards__container(title="Blog entries")
+      - for (let i = 1; i <= 4; i++)
+        li.card
+          .card__thumb
             img.animate(src=`./assets/img-${i}.png`)
-        .card__content
-          h2.card__title.animate
-            a(href="javascript:;") Card Title
-          p.card__text #{makeText()}
-          button.card__btn
-            svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 448 512")
-              //- Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
-              path(d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z")
+          .card__content
+            h3.card__title Card Title #{i}
+            p.card__text #{makeText()}
+            a.card__btn(aria-label=`Read more about Card Title ${i}`, href="#")
+              img(src="./assets/arrow-right-solid.svg", alt="")

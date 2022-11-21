@@ -1,10 +1,18 @@
+@use 'sass:math';
+
+// Convert a number to its equivalent in rem
+@function rem($number, $context: 16) {
+	@return (math.div($number, $context)) * 1rem;
+}
+
 :root {
-	--main-font: 'Lato', sans-serif;
+	--primary-font: 'Lato', sans-serif;
 	--secondary-font: 'Playfair Display', serif;
-	--main-bg: #f4f4f1;
+	--body-bg: #f4f4f1;
 	--selection-bg: #fffaa3;
 	--grey: #6a6a6a;
-	--dark: #444;
+	--dark-grey: #444;
+	--dark: #171717;
 }
 
 * {
@@ -18,9 +26,19 @@
 }
 
 body {
+	background-color: var(--body-bg);
+	color: var(--dark-grey);
+	font-family: var(--primary-font);
+	letter-spacing: rem(0.5);
 	margin-top: 30px;
-	background-color: var(--main-bg);
-	letter-spacing: 0.5px;
+}
+
+ol {
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+	}
 }
 
 img,
@@ -29,23 +47,27 @@ svg {
 	vertical-align: top;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
 /* :: card :: */
-.card {
-	max-width: 850px;
-	width: 95%;
-	margin-inline: auto;
+.cards__container {
 	display: grid;
 	grid-template-columns: 1fr;
-	margin-bottom: 40px;
+	margin: rem(30) auto;
+	max-width: rem(850);
+	width: 95%;
+	gap: rem(60);
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 1fr;
 
 	&__thumb {
 		overflow: hidden;
 		background-color: var(--grey);
+
+		img {
+			transition: all 0.3s ease;
+		}
 
 		&:hover img {
 			transform: scale(1.1);
@@ -53,85 +75,72 @@ a {
 	}
 
 	&__content {
-		position: relative;
 		background-color: white;
-		padding: 45px;
+		padding: rem(35) rem(15) rem(55);
+		position: relative;
 		text-align: center;
 	}
 
 	&__title {
+		color: var(--dark);
 		font-family: var(--secondary-font);
-		margin-bottom: 20px;
-		font-size: 35px;
+		font-size: rem(35);
 		font-weight: 400;
-
-		&:hover {
-			color: var(--grey);
-		}
+		margin-bottom: rem(20);
 	}
 
 	&__text {
-		font-family: var(--main-font);
-		color: var(--dark);
-		line-height: 25px;
+		line-height: 1.7;
 	}
 
 	&__btn {
+		background: var(--dark-grey);
 		border: none;
-		background: var(--dark);
-		color: white;
-		padding: 10px;
-		font-size: 18px;
-		position: absolute;
-		bottom: -20px;
+		bottom: rem(-20);
 		left: 50%;
-		width: 40px;
+		padding: rem(10);
+		position: absolute;
 		transform: translateX(-50%);
-
-		svg {
-			vertical-align: top;
-			fill: white;
-		}
+		transition: all 0.3s ease;
 
 		&:hover,
-		&:focus-visible,
-		&:focus,
-		&:active {
+		&:focus {
 			background-color: var(--grey);
+		}
+
+		img {
+			width: rem(20);
 		}
 	}
 }
 
-/* :: utilities :: */
-.animate {
-	transition: all 0.3s ease;
-}
-
 /* :: mediaqueries :: */
-@media (min-width: 680px) {
+@media (min-width: rem(600)) {
 	.card {
-		grid-template-columns: auto minmax(100px, 470px) auto;
-		grid-template-rows: repeat(2, 1fr) auto auto;
+		grid-template-columns: auto minmax(rem(100), rem(400)) auto;
+		grid-template-rows: repeat(4, auto);
 
 		&__thumb {
-			max-width: 700px;
+			width: 100%;
+			max-width: rem(550);
 			justify-self: center;
 			grid-area: 1 / 1 / -2 / -1;
 		}
 
 		&__content {
 			grid-area: 3 / 2 / -1 / -2;
+			padding: rem(45) rem(45) rem(55);
 		}
 	}
 }
 
-@media (min-width: 900px) {
+@media (min-width: rem(900)) {
 	.card {
-		grid-template-columns: auto 70px minmax(100px, 400px);
+		grid-template-columns: auto rem(70) minmax(rem(100), rem(400));
 		grid-template-rows: repeat(3, auto);
 
 		&:nth-child(even) {
-			grid-template-columns: minmax(100px, 400px) 70px auto;
+			grid-template-columns: minmax(rem(100), rem(400)) rem(70) auto;
 		}
 
 		&__thumb {

@@ -1,57 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <title>Gnarly grid cards</title>
   </head>
   <body>
-    <div class="card">
-      <div class="card__thumb"><a href="javascript:;"><img class="animate" src="./assets/img-1.png"></a></div>
-      <div class="card__content">
-        <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
-        <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde.</p>
-        <button class="card__btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card__thumb"><a href="javascript:;"><img class="animate" src="./assets/img-2.png"></a></div>
-      <div class="card__content">
-        <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
-        <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero.</p>
-        <button class="card__btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card__thumb"><a href="javascript:;"><img class="animate" src="./assets/img-3.png"></a></div>
-      <div class="card__content">
-        <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
-        <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis.</p>
-        <button class="card__btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card__thumb"><a href="javascript:;"><img class="animate" src="./assets/img-4.png"></a></div>
-      <div class="card__content">
-        <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
-        <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis.</p>
-        <button class="card__btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+    <ol class="cards__container" title="Blog entries">
+      <li class="card">
+        <div class="card__thumb"><img class="animate" src="./assets/img-1.png"></div>
+        <div class="card__content">
+          <h3 class="card__title">Card Title 1</h3>
+          <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis.</p><a class="card__btn" aria-label="Read more about Card Title 1" href="#"><img src="./assets/arrow-right-solid.svg" alt=""></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__thumb"><img class="animate" src="./assets/img-2.png"></div>
+        <div class="card__content">
+          <h3 class="card__title">Card Title 2</h3>
+          <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt.</p><a class="card__btn" aria-label="Read more about Card Title 2" href="#"><img src="./assets/arrow-right-solid.svg" alt=""></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__thumb"><img class="animate" src="./assets/img-3.png"></div>
+        <div class="card__content">
+          <h3 class="card__title">Card Title 3</h3>
+          <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur,.</p><a class="card__btn" aria-label="Read more about Card Title 3" href="#"><img src="./assets/arrow-right-solid.svg" alt=""></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__thumb"><img class="animate" src="./assets/img-4.png"></div>
+        <div class="card__content">
+          <h3 class="card__title">Card Title 4</h3>
+          <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur eligendi tempora praesentium.</p><a class="card__btn" aria-label="Read more about Card Title 4" href="#"><img src="./assets/arrow-right-solid.svg" alt=""></a>
+        </div>
+      </li>
+    </ol>
   </body>
 </html>
